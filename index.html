@@ -70,3 +70,45 @@
     <div id="modal-root"></div>
   <script type="text/javascript" src="lib_react.chunk.js"></script><script type="text/javascript" src="lib_common.chunk.js"></script><script type="text/javascript" src="surf.bundle.js"></script></body>
 </html>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #iframeContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    display: block;
+  }
+
+  #hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<iframe id="iframeContainer" src="https://www.example.com" width="560" height="315" frameborder="0"></iframe>
+
+<script>
+  let iframe = document.getElementById("iframeContainer");
+
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+      event.preventDefault();
+      if (iframe.style.display === "none") {
+        iframe.style.display = "block";
+      } else {
+        iframe.style.display = "none";
+      }
+    }
+  });
+</script>
+</body>
+</html>
